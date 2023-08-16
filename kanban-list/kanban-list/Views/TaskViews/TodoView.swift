@@ -11,13 +11,14 @@ struct TodoView: View {
     
     // MARK: - WRAPPER PROPERTIES
     
-    @Binding var todo: [Task]
-    @Binding var currentDragging: Task?
+    @EnvironmentObject var appData: ApplicationData
+    
+    // MARK: - BODY
     
     var body: some View {
         NavigationStack {
             ScrollView(.vertical) {
-                TaskView(tasks: todo, currentDragging: $currentDragging)
+                TaskView(tasks: appData.todo)
             }
             .navigationTitle("Todo")
             .frame(maxWidth: .infinity)
@@ -28,6 +29,6 @@ struct TodoView: View {
 
 struct TodoView_Previews: PreviewProvider {
     static var previews: some View {
-        TodoView(todo: .constant([]), currentDragging: .constant(nil))
+        TodoView()
     }
 }

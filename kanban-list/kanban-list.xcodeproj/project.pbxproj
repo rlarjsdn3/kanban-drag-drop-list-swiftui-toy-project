@@ -16,7 +16,6 @@
 		9E90BF702A8BBFF700B3D076 /* WorkingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E90BF6F2A8BBFF700B3D076 /* WorkingView.swift */; };
 		9E90BF722A8BC00700B3D076 /* CompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E90BF712A8BC00700B3D076 /* CompletedView.swift */; };
 		9E90BF742A8BC11B00B3D076 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E90BF732A8BC11B00B3D076 /* TaskView.swift */; };
-		9E90BF762A8BC27200B3D076 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E90BF752A8BC27200B3D076 /* View+Extension.swift */; };
 		9E90BF792A8BC9C300B3D076 /* ApplicationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E90BF782A8BC9C300B3D076 /* ApplicationData.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,7 +30,6 @@
 		9E90BF6F2A8BBFF700B3D076 /* WorkingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingView.swift; sourceTree = "<group>"; };
 		9E90BF712A8BC00700B3D076 /* CompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedView.swift; sourceTree = "<group>"; };
 		9E90BF732A8BC11B00B3D076 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
-		9E90BF752A8BC27200B3D076 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		9E90BF782A8BC9C300B3D076 /* ApplicationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,7 +68,6 @@
 				9E90BF692A8BBDAC00B3D076 /* Models */,
 				9E90BF5C2A8BBBAF00B3D076 /* Assets.xcassets */,
 				9E90BF5E2A8BBBAF00B3D076 /* Preview Content */,
-				9E90BF752A8BC27200B3D076 /* View+Extension.swift */,
 			);
 			path = "kanban-list";
 			sourceTree = "<group>";
@@ -88,7 +85,6 @@
 			children = (
 				9E90BF5A2A8BBBAE00B3D076 /* ContentView.swift */,
 				9E90BF6C2A8BBF6B00B3D076 /* TaskViews */,
-				9E90BF772A8BC99100B3D076 /* Datas */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -97,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				9E90BF672A8BBDA600B3D076 /* Task.swift */,
+				9E90BF782A8BC9C300B3D076 /* ApplicationData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -110,14 +107,6 @@
 				9E90BF712A8BC00700B3D076 /* CompletedView.swift */,
 			);
 			path = TaskViews;
-			sourceTree = "<group>";
-		};
-		9E90BF772A8BC99100B3D076 /* Datas */ = {
-			isa = PBXGroup;
-			children = (
-				9E90BF782A8BC9C300B3D076 /* ApplicationData.swift */,
-			);
-			path = Datas;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,7 +181,6 @@
 			files = (
 				9E90BF5B2A8BBBAE00B3D076 /* ContentView.swift in Sources */,
 				9E90BF742A8BC11B00B3D076 /* TaskView.swift in Sources */,
-				9E90BF762A8BC27200B3D076 /* View+Extension.swift in Sources */,
 				9E90BF792A8BC9C300B3D076 /* ApplicationData.swift in Sources */,
 				9E90BF702A8BBFF700B3D076 /* WorkingView.swift in Sources */,
 				9E90BF722A8BC00700B3D076 /* CompletedView.swift in Sources */,

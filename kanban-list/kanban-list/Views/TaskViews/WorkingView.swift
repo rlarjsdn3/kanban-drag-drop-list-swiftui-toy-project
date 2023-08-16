@@ -11,13 +11,14 @@ struct WorkingView: View {
     
     // MARK: - WRAPPER PROPERTIES
     
-    @Binding var working: [Task]
-    @Binding var currentDragging: Task?
+    @EnvironmentObject var appData: ApplicationData
+    
+    // MARK: - BODY
     
     var body: some View {
         NavigationStack {
             ScrollView(.vertical) {
-                TaskView(tasks: working, currentDragging: $currentDragging)
+                TaskView(tasks: appData.working)
             }
             .navigationTitle("Working")
             .frame(maxWidth: .infinity)
@@ -28,6 +29,7 @@ struct WorkingView: View {
 
 struct WorkingView_Previews: PreviewProvider {
     static var previews: some View {
-        WorkingView(working: .constant([]), currentDragging: .constant(nil))
+        WorkingView()
+            .environmentObject(ApplicationData())
     }
 }

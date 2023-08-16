@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct kanban_listApp: App {
+    
+    // MARK: - WRAPPER PROPERTIES
+    
+    @StateObject var appData = ApplicationData()
+    
+    // MARK: - BODY
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(appData)
         }
     }
 }

@@ -11,15 +11,14 @@ struct CompletedView: View {
     
     // MARK: - WRAPPER PROPERTIES
     
-    @Binding var completed: [Task]
-    @Binding var currentDragging: Task?
+    @EnvironmentObject var appData: ApplicationData
     
     // MARK: - BODY
     
     var body: some View {
         NavigationStack {
             ScrollView(.vertical) {
-                TaskView(tasks: completed, currentDragging: $currentDragging)
+                TaskView(tasks: appData.completed)
             }
             .navigationTitle("Completed")
             .frame(maxWidth: .infinity)
@@ -30,6 +29,7 @@ struct CompletedView: View {
 
 struct CompletedView_Previews: PreviewProvider {
     static var previews: some View {
-        CompletedView(completed: .constant([]), currentDragging: .constant(nil))
+        CompletedView()
+            .environmentObject(ApplicationData())
     }
 }
