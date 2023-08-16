@@ -23,6 +23,13 @@ struct WorkingView: View {
             .navigationTitle("Working")
             .frame(maxWidth: .infinity)
             .background(Material.ultraThinMaterial)
+            .contentShape(Rectangle())
+            .dropDestination(for: String.self) { items, location in
+                withAnimation(.spring()) {
+                    appData.moveTaskAcrossList(.working)
+                }
+                return true
+            } isTargeted: { _ in }
         }
     }
 }

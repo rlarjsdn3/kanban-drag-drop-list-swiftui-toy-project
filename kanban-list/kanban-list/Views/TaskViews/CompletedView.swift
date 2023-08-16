@@ -23,6 +23,13 @@ struct CompletedView: View {
             .navigationTitle("Completed")
             .frame(maxWidth: .infinity)
             .background(Material.ultraThinMaterial)
+            .contentShape(Rectangle())
+            .dropDestination(for: String.self) { items, location in
+                withAnimation(.spring()) {
+                    appData.moveTaskAcrossList(.completed)
+                }
+                return true
+            } isTargeted: { _ in }
         }
     }
 }

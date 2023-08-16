@@ -23,6 +23,13 @@ struct TodoView: View {
             .navigationTitle("Todo")
             .frame(maxWidth: .infinity)
             .background(Material.ultraThinMaterial)
+            .contentShape(Rectangle())
+            .dropDestination(for: String.self) { items, location in
+                withAnimation(.spring()) {
+                    appData.moveTaskAcrossList(.todo)
+                }
+                return true
+            } isTargeted: { _ in }
         }
     }
 }
