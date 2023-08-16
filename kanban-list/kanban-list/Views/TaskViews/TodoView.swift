@@ -23,7 +23,10 @@ struct TodoView: View {
             .navigationTitle("Todo")
             .frame(maxWidth: .infinity)
             .background(Material.ultraThinMaterial)
+            // 상호작용이 가능한 영역을 지정합니다.
             .contentShape(Rectangle())
+            // 스크롤 뷰 영역에 드롭 동작이 일어나면 '할 일'이 목록을 옮깁니다.
+            // 아래 제어자가 필요한 이유는 빈 목록으로 '할 일'을 드롭할 수 있게 하기 위함입니다.
             .dropDestination(for: String.self) { items, location in
                 withAnimation(.spring()) {
                     appData.moveTaskAcrossList(.todo)
@@ -37,5 +40,6 @@ struct TodoView: View {
 struct TodoView_Previews: PreviewProvider {
     static var previews: some View {
         TodoView()
+            .environmentObject(ApplicationData())
     }
 }

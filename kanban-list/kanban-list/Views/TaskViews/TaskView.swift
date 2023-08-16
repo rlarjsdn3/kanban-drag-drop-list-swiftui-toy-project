@@ -54,13 +54,21 @@ struct TaskView: View {
                         appData.currentDragging = task
                     }
             }
+            // 각 할 일 목록 셀로만 드롭 동작이 가능합니다.
+            // 따라서, 할 일 목록이 비어있을 때는 그 목록으로 드롭이 되지 않습니다. (자세한 내용은 각 하위 뷰 참조)
             .dropDestination(for: String.self) { items, location in
-                // 드래그가 끝난 후(터치를 떼면) 실행되는 클로저
+                // items 매개변수는 String타입의 배열이 전달됩니다.
+                // 이때, 배열로 전달되는 이유는 여러 셀이 한꺼번에 선택될 수 있기 때문입니다.
+                
+                // location 매개변수는 CGPoint타입의 위치 정보가 전달됩니다.
+                
+                // 드래그 앤 드롭 동작이 끝나면 호출되는 클로저로
+                // 동작에 성공했다면 true를, 실패했다면 false를 반환합니다.
                 appData.currentDragging = nil
                 return false
             } isTargeted: { status in
-                // 드래그가 일어나는 동안 실행되는 클로저
-                // 해당 지점에 드롭이 가능하면 status가 true가 된다
+                // 드래그 동작을 하는 동안 실행되는 클로저로
+                // 드롭이 가능한 지점으로 드래그를 하면 status가 true로, 그게 아니라면 false가 전달됩니다.
                 if let currentDragging = appData.currentDragging, currentDragging.id != task.id, status {
                     withAnimation(.spring()) {
                         appData.moveTaskAcrossList(task.status)
