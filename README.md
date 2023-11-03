@@ -14,4 +14,4 @@
  
 ## 👩🏻‍💻Reference
 
-* [KavSoft](https://www.youtube.com/watch?v=iDnrraNom0o&t=0s)
+* [KavSoft - Kanban Drag & Drop - Moving Items between Section/List - Xcode 15 - SwiftUI](https://www.youtube.com/watch?v=iDnrraNom0o&t=0s)
